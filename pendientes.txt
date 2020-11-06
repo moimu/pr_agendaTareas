@@ -1,4 +1,4 @@
-2.pintura
-3.tributación de modulos
-0.instalación electrica
-4.enlucir paredes
+0.comprar café
+1.limpiar oficinas
+2.Instalación equipo de musica
+3.instalación caja fuerte

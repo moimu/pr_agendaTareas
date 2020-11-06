@@ -9,6 +9,20 @@
    <!--problema, solucion, justificación-->
    <body>
       <center><header><h1>TAREAS</h1></header></center>
+
+      <!-- En la etapa 2 de la fase 2 de nuestro proyecto vamos a crear tareas tareas pendientes desde la aplicacion web 
+      para ello emos creado un formulario con los campos que requerimos, enviamos a recogida.php mediante el metodo post, 
+      escribiremos los id y las tareas si cumplen los requesitos que marcamos a continuación -->
+
+      <form method="post" action="recogida.php" enctype="application/x-www-form-urlencoded">
+         <fieldset>
+            <legend> Nueva Tarea </legend>
+            <div><label>ingresa id: <input type=number name="id" ></label></div>
+            <div><label>ingresa tarea: <input type=text name="tarea" required></label></div>
+         </fieldset>
+            <div><button type=submit>Agregar tarea</div>
+      </form>
+
       <?php
       echo "<h3>PENDIENTES</h3>";
 
