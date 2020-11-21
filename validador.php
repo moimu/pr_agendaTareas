@@ -4,7 +4,7 @@
     // me dara numero total de registros en mi fichero.
     $contadoregistros=0;
     while($linea=fgets($fichero1)){
-        list($id,$tarea)=explode(".","$linea");
+        list($preid,$id,$tarea)=explode(".","$linea");
         $contadoregistros++;
     }
     /* una ves tenemos el numero de registros existentes en fichero, deducimos para nuestro validador que 
@@ -16,7 +16,7 @@
     fseek($fichero1,0);
     $totalregistrosconsecutivos=0;
     while($linea=fgets($fichero1)){
-        list($id,$tarea)=explode(".","$linea");
+        list($preid,$id,$tarea)=explode(".","$linea");
         if($id==$totalregistrosconsecutivos){
             $totalregistrosconsecutivos++;
             fseek($fichero1,0);

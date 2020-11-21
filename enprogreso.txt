@@ -1,4 +1,4 @@
-0.creaccion de contenido
-3.hacer despensa grande (posible confinamiento) 
-2.iluminacion general
-1.optimizando operaciones diarias
+1.0.creaccion de contenido
+1.3.hacer despensa grande (posible confinamiento) 
+1.2.iluminacion general
+1.1.optimizando operaciones diarias

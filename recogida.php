@@ -24,16 +24,18 @@
     /* Atencion!! Consideramos que el archivo pendientes.txt, tendrá escrita almenos una tarea con id 0. 
     (sino deberá ser creada para el correcto funcionamieto de nuestro programa.) */
     // si el id es consecutivo se crea la tarea y el id sin problema.
+    // escribo tambien el "preid" indicara, si la tarea esta activa o desactiva(borrada)
+    $preid=1;
     $fichero= fopen("pendientes.txt","ab");
     if($idingres==$id+1){
-        fwrite($fichero,"$idingres.$tareaingres\n");
+        fwrite($fichero,"$preid.$idingres.$tareaingres\n");
         echo "Su tarea a sido añadida.<br>Vuelva atrás y actualice para ver la agenda";
     }
 
     // si el id no es ingresado se crea la tarea con un id consecutivo al ultimo existente.
     elseif($idingres==null){
         $idcreado=$id+1;
-        fwrite($fichero,"$idcreado.$tareaingres\n");
+        fwrite($fichero,"$preid.$idcreado.$tareaingres\n");
         echo "Su tarea a sido añadida, el id se generó de forma consecutiva.<br>Vuelva atrás y actualice para ver la agenda";
     }
 
