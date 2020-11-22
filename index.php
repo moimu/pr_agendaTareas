@@ -17,10 +17,10 @@
       <form method="post" action="recogida.php" enctype="application/x-www-form-urlencoded">
          <fieldset>
             <legend> Nueva Tarea </legend>
-            <div><label>ingresa id: <input type=number name="id" ></label></div>
-            <div><label>ingresa tarea: <input type=text name="tarea" required></label></div>
+            <div><label> Ingresa id: <input type="number" name="id" ></label></div>
+            <div><label> Ingresa tarea: <input type="text" name="tarea" required></label>
+            <button type="submit"> Agregar tarea </button></div>
          </fieldset>
-            <div><button type=submit>Agregar tarea</div>
       </form>
 
       <?php
@@ -58,59 +58,59 @@
       <!--Realizo un formulario para obtener las ids, a borrar de pendientes.txt-->
       <form method="post" action="borrar1.php" enctype="application/x-www-form-urlencoded" >
          <fieldset>
-            <legend>borrar tareas pendientes</legend>
-            <div><label>ingresa id<input type=text name="id" required></label></div>
-            <div><button type=submit>borrar</button></div>   
+            <legend> Borrar tareas pendientes </legend>
+            <div><label> Ingresa id: <input type="number" name="id" required></label>
+            <button type="submit"> Borrar </button></div>   
          </fieldset>
       </form>
-
-      <?php     
+      <!-- Formulario exportacion de id de pendientes.txt a enprogreso.txt -->   
+      <form method="post" action="exportarenprogreso.php" enctype="application/x-www-form-urlencoded"> 
+         <fieldset>
+            <legend> Exportar a tareas en progreso </legend>
+            <div><label> Ingresa id: <input type="number" name="id" required></label>  
+            <button type="submit"> Exportar </button></div> 
+         </fieldset>
+      </form>
+      <?php   
+         // muestro tareas activas, por orden de escritura en el fichero  
          echo "<h3>EN PROGRESO</h3>";
          $progreso= fopen("enprogreso.txt","rb");
-         $contador=0;
          while($cadena= fgets($progreso)){
             list($preid,$id,$tarea)=explode(".","$cadena");
-            if($id==$contador){
-               if($preid==1){
-                  echo "id: $id   tarea: $tarea</br>";
-                  $contador++;
-                  fseek($progreso,0);        
-               }
-               elseif($preid==0){
-                  $contador++; 
-                  fseek($progreso,0);
-               } 
-            } 
+            if($preid==1){
+               echo "id: $id   tarea: $tarea</br>";     
+            }
          }
          fclose ($progreso);
       ?>
       <!--Realizo un formulario para obtener las ids, a borrar de enprogeso.txt-->
       <form method="post" action="borrar2.php" enctype="application/x-www-form-urlencoded" >
          <fieldset>
-            <legend>borrar tareas en progreso</legend>
-            <div><label>ingresa id<input type=text name="id2" required></label></div>
-            <div><button type=submit>borrar</button></div>   
+            <legend> Borrar tareas en progreso </legend>
+            <div><label> Ingresa id: <input type="number" name="id2" required></label>
+            <button type="submit"> Borrar </button></div>   
          </fieldset>
       </form>
-
-      <?php 
+      <!-- Formulario exportacion de id de enprogreso.txt a finalizadas.txt -->
+      <form method="post" action="exportarfinalizadas.php" enctype="application/x-www-form-urlencoded"> 
+         <fieldset>
+            <legend> Exportar a tareas finalizadas </legend>  
+            <div><label> Ingresa id: <input type="number" name="id" required></label> 
+            <button type="submit"> Exportar </button></div>
+         </fieldset>
+      </form>
+      <?php    
+         // muestro tareas activas, por orden de escritura en el fichero
          echo "<h3>FINALIZADAS</h3>";
          $finalizadas= fopen("finalizadas.txt","rb");
-         $contador=0;
          while($cadena= fgets($finalizadas)){
             list($preid,$id,$tarea)=explode(".","$cadena");
-            if($preid==0){
-               $contador++;
-            }
-            if($id==$contador&&$preid==1){
-            echo "id: $id   tarea: $tarea</br>";
-               $contador++;
-               fseek($finalizadas,0);
-            }
+            if($preid==1){
+               echo "id: $id   tarea: $tarea</br>";  
+            } 
          }
          fclose ($finalizadas);
       ?>
-
    </body>
 </html>
 

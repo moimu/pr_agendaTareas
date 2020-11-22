@@ -12,7 +12,7 @@
 
     $fichero=fopen("pendientes.txt","rb");
     while($linea=fgets($fichero)){
-        list($id,$tarea)=explode(".","$linea");
+        list($preid,$id,$tarea)=explode(".","$linea");
         $id= intval($id);
         if($idingres!=null && $idingres==$id){
             echo "!ERROR el id ingresado ya existe!</br>
