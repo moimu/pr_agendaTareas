@@ -30,6 +30,15 @@ fieldset{
     margin:20px;
     
 }
+.tareaIngres{
+    width:50%;
+    min-height:200px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    color:rgb(0, 70, 255);
+    background-color:rgb(120,120,120);
+}
 .tareasPend{
     float: left;
     width:49.7%;
@@ -43,15 +52,6 @@ fieldset{
     width: 49.7%;
     min-height:250px;
     margin-top: 10px;
-    color:rgb(0, 70, 255);
-    background-color:rgb(120,120,120);
-}
-.tareaIngres{
-    width:50%;
-    min-height:150px;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
     color:rgb(0, 70, 255);
     background-color:rgb(120,120,120);
 }
