@@ -21,4 +21,4 @@
     echo "volver atras y actualizar";
 
     $sentencia->close();
-    $db->close();   
+    $db->close();

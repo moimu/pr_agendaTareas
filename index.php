@@ -60,32 +60,28 @@
             </fieldset>
          </form>
 
-         <?php    // muestro tareas pendientes activas (borrado=1)  por orden prioridad. 
+         <?php    // muestro tareas pendientes activas (borrado=1)  por orden prioridad.  
 
             $sentencia = $db->prepare("SELECT * FROM `tareas` WHERE `estado`=? AND `prioridad`=? AND `borrado`=?"); 
             $sentencia->bind_param('ssi', $param1, $param2,$param3); 
-
+               // 
             $param1="pendiente";
             $param2="absoluta";
             $param3=1;
             $sentencia->execute(); 
             $sentencia->bind_result($id, $tarea,$fhalta,$estado,$prioridad,$borrado); 
             while ($sentencia->fetch()){ 
-               printf("%s %s %s %s %s<br>", $id, $tarea,$fhalta,$estado,$prioridad); 
+               printf("%s %s %s <br>", $id, $tarea,$prioridad); 
             } 
-            $param1="pendiente";
             $param2="urgente";
-            $param3=1;
             $sentencia->execute(); 
             while ($sentencia->fetch()){ 
-               printf("%s %s %s %s %s<br>", $id, $tarea,$fhalta,$estado,$prioridad); 
+               printf("%s %s %s <br>", $id, $tarea,$prioridad); 
             } 
-            $param1="pendiente";
             $param2="comun";
-            $param3=1;
             $sentencia->execute();
             while ($sentencia->fetch()){ 
-               printf("%s %s %s %s %s<br>", $id, $tarea,$fhalta,$estado,$prioridad); 
+               printf("%s %s %s <br>", $id, $tarea,$prioridad); 
             }  
             
          ?>
@@ -112,21 +108,17 @@
             $param3=1;
             $sentencia->execute();
             while ($sentencia->fetch()){ 
-               printf("%s %s %s %s %s<br>", $id, $tarea,$fhalta,$estado,$prioridad); 
+               printf("%s %s %s <br>", $id, $tarea,$prioridad); 
             }
-            $param1="enprogreso";
             $param2="urgente";
-            $param3=1;
             $sentencia->execute();
             while ($sentencia->fetch()){ 
-               printf("%s %s %s %s %s<br>", $id, $tarea,$fhalta,$estado,$prioridad); 
+               printf("%s %s %s <br>", $id, $tarea,$prioridad); 
             }  
-            $param1="enprogreso";
             $param2="comun";
-            $param3=1;
             $sentencia->execute();
             while ($sentencia->fetch()){ 
-               printf("%s %s %s %s %s<br>", $id, $tarea,$fhalta,$estado,$prioridad); 
+               printf("%s %s %s <br>", $id, $tarea,$prioridad); 
             }    
 
             $sentencia->close(); 
@@ -149,7 +141,7 @@
             $sentencia-> execute();
             $sentencia->bind_result($id, $tarea,$fhalta,$estado,$prioridad,$borrado);
             while ($sentencia->fetch()){ 
-               printf("%s %s %s %s %s<br>", $id, $tarea,$fhalta,$estado,$prioridad); 
+               printf("%s %s %s <br>", $id, $tarea,$prioridad); 
             }   
             $sentencia->close(); 
 
