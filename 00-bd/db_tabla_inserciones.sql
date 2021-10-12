@@ -1,4 +1,6 @@
-CREATE DATABASE `agenda`
+DROP DATABASE IF EXISTS `agendatareas`;
+CREATE DATABASE `agendatareas`;
+USE `agendatareas`;
 
 CREATE TABLE `tareas`(
     `id` BIGINT AUTO_INCREMENT PRIMARY KEY,
