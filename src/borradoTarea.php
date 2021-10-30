@@ -5,7 +5,7 @@
     $servidor = "localhost"; 
     $user = "root"; 
     $password = null; 
-    $database = "agenda"; 
+    $database = "agendatareas"; 
 
     $db = new mysqli($servidor,$user, $password,$database); 
     if($db->connect_error){ 
